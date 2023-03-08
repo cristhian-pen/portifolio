@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url('./assets//background.jpg');
+  backdrop-filter: blur(4px);
+  background-attachment: fixed;
+  background-size: contain;
+}
+
+.title {
+  font-family: 'Roboto';
+}
+
+.subtitle {
+  font-family: 'inter';
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.margin {
+  margin-top: -8rem;
+  z-index: 5;
+}
