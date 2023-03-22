@@ -23,7 +23,7 @@ export default function Footer() {
                         </a>
                     </div>
                 </div>
-                <h6 className="title my-2 text-center text-slate-400">© 2023 Desenvolvido por cristhian moura para fins profissionais. Todos os direitos reservados.</h6>
+                <h6 className="title my-2 text-sm text-center text-slate-400 xl:text-md">© 2023 Desenvolvido por cristhian moura para fins profissionais. Todos os direitos reservados.</h6>
             </section>
         </>
     );

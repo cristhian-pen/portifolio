@@ -14,23 +14,23 @@ export default function Home() {
         <div className="opacity-100 headline">
             <Navigator />
             <Fade bottom>
-                <section className="flex my-56 flex-col scroll-smooth56 justify-center items-center">
+                <section className="flex my-24 flex-col scroll-smooth56 justify-center items-center md:my-56">
                     <img src={Perfil} className="rounded-full border-2 border-white w-56 h-56 mb-8" alt="perfil" />
-                    <div className="text-white text-center title text-8xl">
-                        <code>Cristhian Moura</code>
+                    <div className="text-white text-center title text-3xl xl:text-8xl">
+                        <code >Cristhian Moura</code>
                         <br />
-                        <code>&lt;Desenvolvedor Web/&gt;</code>
+                        <code >&lt;Desenvolvedor Web/&gt;</code>
                     </div>
                 </section>
             </Fade>
-            <section className="flex headline shadow-2xl h-auto justify-center items-center flex-col rounded-t-[150px] bg-white">
+            <section className="flex flex-col headline w-screen shadow-2xl bg-white rounded-lg justify-center items-center xl:h-auto xl:rounded-t-[150px]">
                 <Fade bottom>
 
                     {/*um pouco sobre*/}
-                    <div id="About" className="flex title text-center my-20 mb-10 text-4xl">
+                    <div id="About" className="flex title text-center my-20 mb-10 text-3xl xl:text-4xl">
                         <h2>Sobre</h2>
                     </div>
-                    <div className="mr-20 ml-20">
+                    <div className="mr-5 ml-5 xl:mr-20 xl:ml-20">
                         <p className="title text-slate text-center mb-8 text-xl w-fit">
                             Analista e desenvolvedor de sistemas júnior, cursei uma iniciação a análise, exploração e pós exploração
                             de vulnerabilidades em ambientes web utilizando ferramentas do Kali Linux e atualmente sou o Analista de sistemas Jr.
@@ -47,7 +47,7 @@ export default function Home() {
 
                     {/*Projetos e desings feitos */}
                     <Fade bottom>
-                        <div id="projects" className="title flex flex-col text-center my-24 text-4xl">
+                        <div id="projects" className="flex title text-center text-3xl my-24 xl:text-4xl xl:flex-col">
                             <h2>Projetos e Designs</h2>
                         </div>
                     </Fade>
@@ -56,18 +56,18 @@ export default function Home() {
                     </Fade>
 
                     {/* Principais tecnologias de desenvolvimento */}
-                    <div id="Tecs" className="my-36 mb-20">
-                        <h2 className="title text-center text-4xl">Principais Tecnologias de Desenvolvimento</h2>
-                        <div className="flex justify-between my-20 ">
+                    <div id="Tecs" className="my-36 items-center justify-center xl:my-36 xl:mb-20 xl:flex xl:flex-col">
+                        <h2 className="title text-center text-3xl xl:text-4xl ">Principais Tecnologias de Desenvolvimento</h2>
+                        <div className="my-20 flex flex-col items-center justify-center xl:flex xl:justify-between xl:flex-row">
 
-                            <div className="flex flex-col items-center mr-28 text-center w-64">
+                            <div className="flex flex-col items-center text-center w-64 xl:mr-28">
                                 <FaNodeJs className="cursor-none mb-8 w-16 h-16" ></FaNodeJs>
                                 <h4 className="text-slate text-lg font-bold">
                                     Desenvolvimento de projetos
                                     utilizando o melhor das ferramentas
                                     que a linguagem javascript disponibiliza.</h4>
                             </div>
-                            <div className="flex flex-col items-center mr-28 text-center w-64">
+                            <div className="flex flex-col items-center text-center w-64 my-14 mb-14 xl:mr-28">
                                 <SiTailwindcss className="cursor-none mb-8 w-16 h-16"></SiTailwindcss>
                                 <h4 className="text-slate text-lg font-bold">
                                     Estilização funcional com

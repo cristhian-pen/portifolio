@@ -13,9 +13,9 @@ export default function Routes() {
     return (
         <Switch location={location}>
             <Route path="/home" component={Home} />
-            <Route path="/projects/bloomodas" component={Bloomodas} />
-            <Route path="/projects/gamefinders" component={GameFinder} />
-            <Route path="/projects/portifolio" component={Portifolio} />
+            <Route path="/bloomodas" component={Bloomodas} />
+            <Route path="/gamefinders" component={GameFinder} />
+            <Route path="/portifolio" component={Portifolio} />
         </Switch>
     );
 }

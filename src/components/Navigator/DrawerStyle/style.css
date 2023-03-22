@@ -1,0 +1,21 @@
+.nav-menu.active {
+    left: 0;
+    transition: 1000ms;
+}
+
+.nav-menu {
+    z-index: 1;
+    position: fixed;
+    margin-left: 1px;
+    top: 1px;
+    left: -110%;
+    transition: 2000ms;
+}
+
+.anim {
+    pointer-events: none;
+}
+
+.infoh {
+    display: none
+}
