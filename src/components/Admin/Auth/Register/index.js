@@ -54,7 +54,7 @@ export default function ForgetPass() {
                                             <a
                                                 class="inline-block right-0 align-baseline font-bold cursor-pointer text-sm text-500 subtitle hover:text-primary-color"
                                                 href="/auth"
-                                            >Voltar a tela de login
+                                            >Voltar a tela de login!
                                             </a>
                                         </form>
                                     </div>
