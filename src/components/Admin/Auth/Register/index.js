@@ -22,6 +22,8 @@ export default function ForgetPass() {
             text: 'Verifique sua caixa de entrada ou SPAM!'
         })
     }
+
+
     return (
         <>
             <div class="h-screen font-sans login bg-cover">

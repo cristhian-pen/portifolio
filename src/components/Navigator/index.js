@@ -34,12 +34,12 @@ export default function Navigator() {
                                 </div>
                             </button>
                             <div className="text-4xl rounded-xl shadow-xl ml-16 mb-8 my-8 text-white bg-black text-center w-60 h-11">
-                                <a href="/Home" target={"_blank"}>
+                                <a href="/home" target={"_blank"}>
                                     <p>Home</p>
                                 </a>
                             </div>
                             <div className="text-4xl rounded-xl shadow-xl ml-16 mb-8 my-8 text-white bg-black text-center w-60 h-11">
-                                <a href="/Home#About" target={"_blank"}>
+                                <a href="/home#About" target={"_blank"}>
                                     <p>Sobre</p>
                                 </a>
                             </div>

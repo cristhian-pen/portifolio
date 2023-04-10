@@ -4,7 +4,7 @@
 }
 
 .nav-menu {
-    z-index: 1;
+    z-index: 10;
     position: fixed;
     margin-left: 1px;
     top: 1px;
