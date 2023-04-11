@@ -29,12 +29,12 @@ function Bloomodas() {
     return (
         <div className="opacity-100 headline h-screen">
             <Navigator />
-            <section className="flex animate_animated  flex-col shadow-2xl h-auto my-40 justify-center items-center flex-col rounded-t-[150px] bg-white">
+            <section className="flex my-24 flex-col headline w-screen shadow-2xl bg-white rounded-lg justify-center items-center xl:h-auto xl:my-40 xl:rounded-t-[150px]">
                 <Fade bottom>
-                    <p className="text-center text-4xl title my-20 underline">Projeto E-commerce Bloomodas</p>
+                    <p className="text-center text-3xl title my-20 underline xl:text-4xl">Projeto E-commerce Bloomodas</p>
                 </Fade>
                 <Fade bottom>
-                    <div className="flex flex-col justify-center items-center mb-20 mr-24 ml-24 border-2 rounded-3xl shadow-2xl">
+                    <div className="flex flex-col justify-center items-center border-2 rounded-3xl shadow-2xl ml-1.5 mr-1.5 mb-10 xl:mb-20 xl:mr-24 xl:ml-24">
                         <Carousel
                             autoPlay={true}
                             infiniteLoop={true}
@@ -67,10 +67,10 @@ function Bloomodas() {
                 </Fade>
                 <div className="flex flex-col text-center">
                     <Fade bottom>
-                        <p className="text-4xl title mb-20">Descrição do Projeto</p>
+                        <p className="text-3xl title mb-20 xl:text-4xl">Descrição do Projeto</p>
                     </Fade>
                     <Fade bottom>
-                        <article className="title text-slate text-center mb-8 text-xl ml-24 mr-24">
+                        <article className="mr-5 ml-5 title text-slate text-center mb-8 text-xl xl:ml-24 xl:mr-24">
                             <p>
                                 O projeto de ecommerce bloomodas foi inicialmente desenvolvido para estudos e sem fins lucrativos,
                                 a proposta desta loja era um tanto diferente na época, o objetivo era o cliente finalizar a compra em contato direto com o vendedor
@@ -91,34 +91,35 @@ function Bloomodas() {
                             </p>
                             <center className="my-20 underline hover:text-slate-900 cursor-pointer"><a href="https://github.com/cristhian-pen/Projeto-Bloom-modas" target={"_blank"}>Voce pode acessar o codigo fonte clicando aqui</a></center>
                         </article>
-                        <h2 className="title text-4xl text-center my-20">Tecnologias do Projeto</h2>
+                        <h2 className="title text-3xl text-center my-10 xl:my-20 xl:text-4xl">Tecnologias do Projeto</h2>
 
-                        <ul className="flex flex-row justify-center items-center mb-44 flex-wrap">
-                            <li className="flex flex-col justify-center mr-14 items-center">
+                        <ul className="flex flex-col justify-center items-center mb-24 xl:mb-44 xl:flex-wrap xl:flex-row">
+
+                            <li className="flex flex-col my-8 mb-8 justify-center items-center xl:mr-14">
                                 <SiJavascript className="cursor-none mb-2 w-14 h-14 rounded-lg" />
                                 <p className="text-slate text-center text-lg">Javascript</p>
                             </li>
-                            <li className="flex flex-col justify-center mr-14 items-center">
+                            <li className="flex flex-col mb-8 justify-center items-center xl:mr-14">
                                 <SiHandlebarsdotjs className="cursor-none mb-2 w-14 h-14 rounded-lg" />
                                 <p className="text-slate text-center text-lg">Handlebars</p>
                             </li>
-                            <li className="flex flex-col justify-center mr-14 items-center">
+                            <li className="flex flex-col mb-8 justify-center items-center xl:mr-14">
                                 <SiSequelize className="cursor-none mb-2 w-14 h-14 rounded-lg" />
                                 <p className="text-slate text-center text-lg">Sequelize</p>
                             </li>
-                            <li className="flex flex-col justify-center mr-14 items-center">
+                            <li className="flex flex-col mb-8 justify-center items-center xl:mr-14">
                                 <SiExpress className="cursor-none mb-2 w-14 h-14 rounded-lg" />
                                 <p className="text-slate text-center text-lg">ExpressJs</p>
                             </li>
-                            <li className="flex flex-col justify-center mr-14 items-center">
+                            <li className="flex flex-col mb-8 justify-center items-center xl:mr-14">
                                 <SiBootstrap className="cursor-none mb-2 w-14 h-14 rounded-lg" />
                                 <p className="text-slate text-center text-lg">Bootstrap</p>
                             </li>
-                            <li className="flex flex-col justify-center mr-14 items-center">
+                            <li className="flex flex-col mb-8 justify-center items-center xl:mr-14">
                                 <SiMysql className="cursor-none mb-2 w-14 h-14 rounded-lg" />
                                 <p className="text-slate text-center text-lg">Mysql</p>
                             </li>
-                            <li className="flex flex-col justify-center mr-14 items-center">
+                            <li className="flex flex-col justify-center items-center xl:mr-14">
                                 <SiInsomnia className="cursor-none mb-2 w-14 h-14 rounded-lg" />
                                 <p className="text-slate text-lg">Insomnia</p>
                             </li>

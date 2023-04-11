@@ -12,7 +12,7 @@ module.exports = {
             'slate-400': '#9ca3af',
             'slate-900': '#0f172a',
             'white': '#ffff',
-            'black': '#0000',
+            'black': '#111',
             'back': '#128C7E',
             'bord': '#DA0037'
         }

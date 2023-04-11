@@ -11,6 +11,12 @@
 # production
 /build
 
+#Variaveis de ambiente e acessos
+/.env
+/src/info.json
+/src/auth.js
+/src/components/PrivateRoute
+
 # misc
 .DS_Store
 .env.local
