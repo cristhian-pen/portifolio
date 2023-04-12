@@ -20,7 +20,7 @@ export default function Routes() {
             <Route exact path="/bloomodas" component={Bloomodas} />
             <Route exact path="/gamefinders" component={GameFinder} />
             <Route exact path="/portifolio" component={Portifolio} />
-            <PrivateRoute exact path="/admin" component={Admin} />
+            <PrivateRoute path="/admin" component={Admin} />
             <Route exact path="/auth" component={Auth} />
             <Route exact path="/forgotpassword" component={ForgetPass} />
         </Switch>

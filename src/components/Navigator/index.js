@@ -17,7 +17,7 @@ export default function Navigator() {
         <div className="flex headline py-8 items-center flex-wrap justify-between">
             <div></div>
             <div className="flex flex-row items-center my-08 cursor-pointer">
-                <a href='/home'>
+                <a href='/Home'>
                     <img src={logo_portifolio} className="ml-4 w-20 h-14" alt="Logo" />
                 </a>
                 <aside className="md:hidden">
@@ -34,22 +34,22 @@ export default function Navigator() {
                                 </div>
                             </button>
                             <div className="text-4xl rounded-xl shadow-xl ml-16 mb-8 my-8 text-white bg-black text-center w-60 h-11">
-                                <a href="/home" >
+                                <a href="/Home" target={"_blank"}>
                                     <p>Home</p>
                                 </a>
                             </div>
                             <div className="text-4xl rounded-xl shadow-xl ml-16 mb-8 my-8 text-white bg-black text-center w-60 h-11">
-                                <a href="#About" >
+                                <a href="/Home#About" target={"_blank"}>
                                     <p>Sobre</p>
                                 </a>
                             </div>
                             <div className="text-4xl rounded-xl shadow-xl ml-16 mb-8 my-8 text-white bg-black text-center w-60 h-11">
-                                <a href="#projects" >
+                                <a href="/Home#projects" target={"_blank"}>
                                     <p>Projetos</p>
                                 </a>
                             </div>
                             <div className="text-4xl rounded-xl shadow-xl ml-16 my-8 mb-80 text-white bg-black text-center w-60 h-11">
-                                <a href="#Tecs" >
+                                <a href="/Home#Tecs" target={"_blank"}>
                                     <p>Tecs</p>
                                 </a>
                             </div>

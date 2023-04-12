@@ -53,18 +53,18 @@ export default function ForgetPass() {
 
     return (
         <>
-            <div class="h-screen font-sans login bg-cover">
-                <div class="container mx-auto h-full flex flex-1 justify-center items-center">
-                    <div class="h-screen font-sans login bg-cover">
-                        <div class="container mx-auto h-full flex flex-1 justify-center items-center">
-                            <div class="w-full max-w-lg">
+            <div className="h-screen font-sans login bg-cover">
+                <div className="container mx-auto h-full flex flex-1 justify-center items-center">
+                    <div className="h-screen font-sans login bg-cover">
+                        <div className="container mx-auto h-full flex flex-1 justify-center items-center">
+                            <div className="w-full max-w-lg">
                                 <Fade top cascade >
-                                    <div class="leading-loose">
-                                        <form class="max-w-sm m-4 flex flex-col items-center justify-center p-10 bg-white bg-opacity-25 rounded shadow-xl">
-                                            <p class="font-medium text-center text-lg title font-bold">ESQUECEU A SENHA</p>
-                                            <div class="my-5 ">
-                                                <label class="block text-sm mb-0.5 subtitle" for="email">Digite seu email</label>
-                                                <input class="w-full px-5 py-1 text-slate-400 border-2 rounded focus:outline-none"
+                                    <div className="leading-loose">
+                                        <form className="max-w-sm m-4 flex flex-col items-center justify-center p-10 bg-white bg-opacity-25 rounded shadow-xl">
+                                            <p className="font-medium text-center text-lg title font-bold">ESQUECEU A SENHA</p>
+                                            <div className="my-5 ">
+                                                <label className="block text-sm mb-0.5 subtitle" for="email">Digite seu email</label>
+                                                <input className="w-full px-5 py-1 text-slate-400 border-2 rounded focus:outline-none"
                                                     type="text"
                                                     placeholder="Digite o e-mail"
                                                     aria-label="email"
@@ -73,15 +73,15 @@ export default function ForgetPass() {
                                                     onChange={handleEmail}
                                                 />
                                             </div>
-                                            <div class="mt-4 mb-5 items-center flex justify-between">
-                                                <button class="px-4 py-1 font-light tracking-wider bg-slate text-white subtitle hover:bg-gray-800 hover:bg-fourth-color rounded"
+                                            <div className="mt-4 mb-5 items-center flex justify-between">
+                                                <button className="px-4 py-1 font-light tracking-wider bg-slate text-white subtitle hover:bg-gray-800 hover:bg-fourth-color rounded"
                                                     type="button"
                                                     onClick={sendMail}
                                                 >Solicitar Senha
                                                 </button>
                                             </div>
                                             <a
-                                                class="inline-block right-0 align-baseline font-bold cursor-pointer text-sm text-500 subtitle hover:text-primary-color"
+                                                className="inline-block right-0 align-baseline font-bold cursor-pointer text-sm text-500 subtitle hover:text-primary-color"
                                                 href="/auth"
                                             >Voltar a tela de login!
                                             </a>

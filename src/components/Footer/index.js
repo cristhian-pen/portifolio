@@ -2,6 +2,7 @@ import React from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 
 export default function Footer() {
+
     return (
         <>
             <section className="flex flex-col items-center">
@@ -24,9 +25,9 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="text-center">
-                    <a className="title my-2 text-sm text-center text-slate-400 xl:text-md cursor-pointer hover:text-primary-color" href="/auth">Pagina de administrador</a>
+                    <a className="title my-2 text-sm text-center text-slate-400 xl:text-md cursor-pointer hover:text-primary-color" href="/admin">Pagina de administrador</a>
                 </div>
-                <h6 className="title my-0.5 text-sm text-center text-slate-400 xl:text-md">© 2023 Desenvolvido por cristhian moura para fins profissionais. Todos os direitos reservados.</h6>
+                <h6 className="title text-sm my-0.5 text-center text-slate-400 xl:text-md">© 2023 Desenvolvido por cristhian moura para fins profissionais. Todos os direitos reservados.</h6>
             </section>
         </>
     );
