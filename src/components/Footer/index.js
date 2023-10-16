@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 
 export default function Footer() {
-
     return (
         <>
             <section className="flex flex-col items-center">
@@ -19,7 +18,7 @@ export default function Footer() {
                         </a>
                     </div>
                     <div className="flex black mr-2">
-                        <a>
+                        <a href="/home/email">
                             <FaEnvelope className="cursor-pointer w-9 h-9" ></FaEnvelope>
                         </a>
                     </div>

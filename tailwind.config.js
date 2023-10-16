@@ -8,6 +8,7 @@ module.exports = {
             'secondary-color': '#690359',
             'third-color': '#022658',
             'fourth-color': '#00132E',
+            'red': '#ff0f0f',
             'slate': '#6b7280',
             'slate-400': '#9ca3af',
             'slate-900': '#0f172a',

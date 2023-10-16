@@ -1,54 +1,88 @@
 import React, { useState } from "react";
+
+//Efeitos e animações
 import Swal from 'sweetalert2';
 import { Fade } from 'react-reveal';
+
+//Components
+import api from '../../../../Services/Api/api';
+
+//Envios de email
 import emailjs from 'emailjs-com';
-import json from '../../../../info.json';
 
 
 export default function ForgetPass() {
 
-    const [email, setEmail] = useState({
-        email: ''
-    });
+    //Hooks
+    const [data, setData] = useState();
+    const [error, setError] = useState();
+    const [email, setEmail] = useState({ email: '' });
 
+
+    //Captura os inputs no formulario
     const handleEmail = (event) => {
         setEmail({
             ...email,
             [event.target.name]: event.target.value
         });
+
+        setError('');
     }
 
+
+    //Variaveis globais do emailjs
     const YOUR_SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
     const YOUR_TEMPLATE_ID = process.env.REACT_APP_TEMPLATE_ID;
     const YOUR_USER_ID = process.env.REACT_APP_USER_ID;
 
+
+    //Função que envia o email a partir de uma busca na api
     const sendMail = (e) => {
-        e.preventDefault();
 
-        let templateParams = {
-            message: json.hashpassword,
-            username: json.usuario,
-            usermail: email.email
-        };
+        //Validação dos campos
+        if (email.email === '') {
+            setError('Informe um email para ser enviado');
+        }
+        else {
+            //Busca dados na api a partir do email fornecido no input
+            api.get(`/api/usuarios/${email.email}`)
+                .then((res) => {
+                    setData(res.data);
+                })
 
-        emailjs.send(
-            YOUR_SERVICE_ID,
-            YOUR_TEMPLATE_ID,
-            templateParams,
-            YOUR_USER_ID
+            //Validação da resposta da api
+            if (data === undefined) {
+                setError('Email não cadastrado, contate o administrador!');
 
-        ).then((result) => {
-            console.log(result.text);
-        }, (error) => {
-            console.log(error.text);
-        });
+            }
+            //Envia o email para o usuario
+            else {
+                //VAriaveis do email js
+                let username = data?.NOME
+                let templateParams = {
+                    username: username,
+                    usermail: email.email
+                };
 
-        Swal.fire({
-            icon: "success",
-            title: 'Senha enviada para ' + email.email,
-            text: 'Verifique sua caixa de entrada ou SPAM!'
-        });
+                //Configuração do emailJs
+                emailjs.send(
+                    YOUR_SERVICE_ID,
+                    YOUR_TEMPLATE_ID,
+                    templateParams,
+                    YOUR_USER_ID
 
+                )
+
+                //Caso sucesso estoura o alerta
+                Swal.fire({
+                    icon: "success",
+                    title: 'Senha enviada para ' + email.email,
+                    text: 'Verifique sua caixa de entrada ou SPAM!'
+                });
+            }
+        }
+        //Limpa os inputs
+        setEmail({ email: '' })
     }
 
     return (
@@ -61,17 +95,19 @@ export default function ForgetPass() {
                                 <Fade top cascade >
                                     <div className="leading-loose">
                                         <form className="max-w-sm m-4 flex flex-col items-center justify-center p-10 bg-white bg-opacity-25 rounded shadow-xl">
-                                            <p className="font-medium text-center text-lg title font-bold">ESQUECEU A SENHA</p>
-                                            <div className="my-5 ">
-                                                <label className="block text-sm mb-0.5 subtitle" for="email">Digite seu email</label>
+                                            <p className="font-medium my-2 text-center text-lg title font-bold">ESQUECEU A SENHA</p>
+                                            <div className="my-2 w-full">
+                                                <label className="block w-full text-sm mb-0.5 subtitle" >Digite seu email</label>
                                                 <input className="w-full px-5 py-1 text-slate-400 border-2 rounded focus:outline-none"
                                                     type="text"
                                                     placeholder="Digite o e-mail"
                                                     aria-label="email"
                                                     required
+                                                    value={email.email}
                                                     name="email"
                                                     onChange={handleEmail}
                                                 />
+                                                <span className="text-sm font-light text-red animate_animated animate__shakeX">{error}</span>
                                             </div>
                                             <div className="mt-4 mb-5 items-center flex justify-between">
                                                 <button className="px-4 py-1 font-light tracking-wider bg-slate text-white subtitle hover:bg-gray-800 hover:bg-fourth-color rounded"

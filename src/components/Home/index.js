@@ -1,25 +1,72 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
+//animações e efeitos
 import Fade from 'react-reveal';
+import NoPhoto from "../Animations/No-photo";
+
+//componentes e serviços
+import API from '../../Services/Api/api';
 import Navigator from "../Navigator";
+import ProjectPage from "../Projects";
 import Footer from "../Footer";
+
+//icons
 import { FaNodeJs } from 'react-icons/fa';
 import { SiTailwindcss } from 'react-icons/si';
 import { GrMysql } from 'react-icons/gr';
-import Perfil from '../../assets/perfil.jpg';
-import ProjectPage from "../Projects";
 
 export default function Home() {
+
+    const [info, setInfo] = useState([]);
+    const [url, setUrl] = useState('');
+
+    async function getInformacao() {
+        await API.get('/api/central')
+            .then((res) => {
+                //API retorna as informações no state data que recebe um objeto
+                setInfo(res.data.informações[0])
+                setUrl(res.data.url);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
+    }
+
+    //consumo da api que retorna as informações na tela de admin
+    useEffect(() => {
+
+        getInformacao();
+
+    }, [500]);
+
+    //const imagem = info.IMG_CENTRAL;
+
     return (
         <div className="opacity-100 headline">
+            {/* componente header*/}
             <Navigator />
+
             <Fade bottom>
                 <section className="flex my-24 flex-col scroll-smooth56 justify-center items-center md:my-56">
-                    <img src={Perfil} className="rounded-full border-2 border-white w-56 h-56 mb-8" alt="perfil" />
+                    {
+                        //renderização condicional que define se a imagem for nula retorna uma animação
+                        !url
+                            ?
+                            <div className="rounded-full border-2 border-white w-56 h-56 mb-8 bg-slate-400">
+                                <NoPhoto
+                                    height={224}
+                                    width={224}
+                                />
+                            </div>
+                            :
+                            <img src={url + info?.IMG_CENTRAL} className="rounded-full border-2 border-white w-56 h-56 mb-8" alt="perfil" />
+                    }
+
                     <div className="text-white text-center title text-3xl xl:text-8xl">
-                        <code >Cristhian Moura</code>
+                        <code>{info.TITULO_CENTRAL}</code>
                         <br />
-                        <code >&lt;Desenvolvedor Web/&gt;</code>
+                        <code >{info.SUBTITULO_CENTRAL}</code>
                     </div>
                 </section>
             </Fade>
@@ -32,23 +79,14 @@ export default function Home() {
                     </div>
                     <div className="mr-5 ml-5 xl:mr-20 xl:ml-20">
                         <p className="title text-slate text-center mb-8 text-xl w-fit">
-                            Analista e desenvolvedor de sistemas júnior, cursei uma iniciação a análise, exploração e pós exploração
-                            de vulnerabilidades em ambientes web utilizando ferramentas do Kali Linux e atualmente sou o Analista de sistemas Jr.
-                            sou responsável pelo suporte à eventos adversos e erros relacionados aos sistemas presentes no hospital ,
-                            atuo no controle de acesso dos usuários, desenvolvimento de relatórios personalizados utilizando SQL e a
-                            ferramenta PL/SQL Developer além de realizar atualizações e monitorar o ambiente dos servidores do sistema MV.
-                        </p>
-                        <p className="title text-slate text-center mb-8 text-xl w-fit">
-                            tenho experiência na criação e controle de acesso do domínio das máquinas da instituição utilizando o
-                            software Active Directory e no firewall PFsense a liberação de acesso e monitoramento da rede do hospital,
-                            ajudo no gerenciamento e direcionamento da equipe de suporte para manutenções locais nos setores do hospital
+                            {info.SOBRE_CENTRAL}
                         </p>
                     </div>
 
                     {/*Projetos e desings feitos */}
                     <Fade bottom>
                         <div id="projects" className="flex title text-center text-3xl my-24 xl:text-4xl xl:flex-col">
-                            <h2>Projetos e Designs</h2>
+                            <h2>Últimos Projetos e Designs</h2>
                         </div>
                     </Fade>
                     <Fade bottom>
@@ -85,7 +123,10 @@ export default function Home() {
                         </div>
                     </div>
                 </Fade>
+
+                {/*Footer da página */}
                 <Footer />
+
             </section>
         </div>
     );
